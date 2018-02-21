@@ -1,5 +1,4 @@
-import java.util.Scanner;
-import java.util.Arrays;
+package geometria;
 
 public class triangle_ui {
 

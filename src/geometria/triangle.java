@@ -1,3 +1,5 @@
+package geometria;
+
 import java.util.Scanner;
 
 public class triangle {
