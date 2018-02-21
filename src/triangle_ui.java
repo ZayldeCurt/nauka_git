@@ -9,10 +9,10 @@ public class triangle_ui {
         double[] boki = new double[2];
 
 
-        trojkat.PobierzBok();
+    trojkat.PobierzBok();
 
-        trojkat.CheckDefault();
 
+        //trojkat.oblicz_przeciwprostokatna();
 
  /*       if(trojkat.Sprawdz_Czy_Prostokatny())
         {

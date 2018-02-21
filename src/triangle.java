@@ -31,9 +31,9 @@ public class triangle {
     public double Obwod;
 
 
-    void CheckDefault()
+    private void CheckDefault()
     {
-        if(!defaultBokA||!defaultBokB || !defaultBokC)
+        if(!defaultBokA&&!defaultBokB && !defaultBokC)
         {
             defaultBok=false;
             System.out.println("nie domyslne");
@@ -104,8 +104,13 @@ public class triangle {
 
     void oblicz_przeciwprostokatna()
     {
+        if(defaultBokA||defaultBokB)
+        {
+            System.out.println("UWAGA! boki są domyslne");
+        }
         this.bokC = Math.sqrt(Math.pow(bokA,2)+Math.pow(bokB,2));
         defaultBokC=false;
+        System.out.println(bokC);
     }
     void oblicz_obwod()
     {
