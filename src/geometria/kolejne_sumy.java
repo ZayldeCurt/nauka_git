@@ -15,20 +15,28 @@ public class kolejne_sumy {
             odczyt = new Scanner(System.in);
         }
         int ilosc = odczyt.nextInt();
-        int temp=0;
+
         String tekst = "";
+        String przerwa = " ";
+        int j=ilosc;
 
-        for (int i=0;i<=ilosc;i++)
+        for (int i=0 ;i<=ilosc;i++)
         {
-            temp+=i;
 
 
-            tekst = tekst + " " + String.valueOf(temp);
-
-            if(i % 2 == 0)
+            String tempS ="";
+            for(int k=0;k<=j;k++)
             {
-                System.out.println(tekst);
+                tempS +=przerwa;
             }
+            j--;
+            tekst = tekst + " " + String.valueOf("*");
+
+            if((i % 2)==0)
+            {
+                System.out.println(tempS+tekst);
+            }
+
 
         }
 
