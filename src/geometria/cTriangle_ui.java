@@ -1,10 +1,10 @@
 package geometria;
 
-public class triangle_ui {
+public class cTriangle_ui {
 
     public static void main(String[] args) {
 
-        triangle trojkat = new triangle();
+        cTriangle trojkat = new cTriangle();
         double[] boki = new double[2];
 
 

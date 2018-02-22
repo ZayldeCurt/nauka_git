@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Agechecker {
+public class cAgechecker {
     public static void main(String[] args) {
 
         int Age;

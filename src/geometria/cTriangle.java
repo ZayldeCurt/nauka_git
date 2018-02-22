@@ -2,9 +2,9 @@ package geometria;
 
 import java.util.Scanner;
 
-public class triangle {
+public class cTriangle {
 
-    public triangle(double bokA, double bokB, double bokC) {
+    public cTriangle(double bokA, double bokB, double bokC) {
         this.bokA = bokA;
         this.bokB = bokB;
         this.bokC = bokC;
@@ -12,7 +12,7 @@ public class triangle {
         defaultBokB=false;
         defaultBokC=false;
     }
-    public triangle() {
+    public cTriangle() {
         this.bokA = 1;
         this.bokB = 1;
         this.bokC = 1;

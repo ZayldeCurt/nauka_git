@@ -2,7 +2,7 @@ package geometria;
 
 import java.util.Scanner;
 
-public class kolejne_sumy {
+public class cKolejne_sumy {
 
     public static void main(String[] args)
     {
