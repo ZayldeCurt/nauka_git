@@ -55,7 +55,7 @@ public class cTriangle {
         while(!odczyt.hasNextInt())
         {
             System.out.println("zle, jeszcze raz:");
-
+            odczyt = new Scanner(System.in);
         }
         ilosc=odczyt.nextInt();
         if (ilosc>3)
@@ -71,7 +71,7 @@ public class cTriangle {
         while(!odczyt.hasNextDouble())
         {
             System.out.println("zle, jeszcze raz:");
-            //odczyt = new Scanner(System.in);
+            odczyt = new Scanner(System.in);
         }
         this.bokA = odczyt.nextDouble();
         this.defaultBokA=false;
@@ -83,7 +83,7 @@ public class cTriangle {
             while(!odczyt.hasNextDouble())
             {
                 System.out.println("zle, jeszcze raz:");
-
+                odczyt = new Scanner(System.in);
             }
             this.bokB = odczyt.nextDouble();
             this.defaultBokB=false;
@@ -95,7 +95,7 @@ public class cTriangle {
                 while(!odczyt.hasNextDouble())
                 {
                     System.out.println("zle, jeszcze raz:");
-
+                    odczyt = new Scanner(System.in);
                 }
                 this.bokC = odczyt.nextDouble();
                 this.defaultBokC=false;
