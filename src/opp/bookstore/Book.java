@@ -23,6 +23,9 @@ public class Book {
     public Book(){
 
     }
+    public Book(String title) {
+        this.title = title;
+    }
     public Book(String title, Author author) {
         this.title = title;
         this.author = author;
