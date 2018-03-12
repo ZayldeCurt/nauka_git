@@ -3,6 +3,10 @@ package opp.bookstore;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 public class BookStoreUI extends baseUI{
 
@@ -13,8 +17,17 @@ public class BookStoreUI extends baseUI{
     private JButton addButtonBook;
     private JButton addButtonAuthor;
     private JButton showButton;
+    Set<Book> dictionary= new HashSet<>();;
 
     Book book1 = new Book("w pustyni i w puszczy",new Author("Henryk","Sienkiewicz","Polski"));
+    Book booktemp = new Book("Oko jelenia", new Author("Andrzej","Pilipiuk","Polski"));
+    public BookStoreUI( Set<Book> dictionary)
+    {
+        this();
+        this.dictionary.addAll(dictionary);
+        String something = "something";
+        //TODO znajdowanie książek w kolekcji???
+    }
 
     public BookStoreUI() {
         super();
@@ -61,6 +74,9 @@ public class BookStoreUI extends baseUI{
         if (e.getSource() instanceof JButton) {
             bookResult.setText(book1.getTitle());
             authorkResult.setText(book1.getAuthor().getLastName());
+
+//            bookResult.setText(dictionary[1].getTitle());
+//            authorkResult.setText(dictionary[1].getAuthor().getLastName());
         }
     }
 }

@@ -10,10 +10,10 @@ public class CalendarApplication {
         int numberSC;
 
         CalendarMonth[] oneYear =CalendarMonth.ofYear();
-        for (int i = 0; i < oneYear.length; i++) {
-            System.out.println(oneYear[i]);
-        }
-     /*   System.out.println("Which month? (number)");
+//        for (int i = 0; i < oneYear.length; i++) {
+//            System.out.println(oneYear[i]);
+//        }
+        System.out.println("Which month? (number)");
         int monthNumber = scanner.nextInt();
         System.out.println(oneYear[monthNumber-1]);
         while(true)
@@ -52,7 +52,7 @@ public class CalendarApplication {
             }
             System.out.println(oneYear[monthNumber-1]);
         }
-*/
+
 
     }
 }
