@@ -1,4 +1,4 @@
-package geometria.shapes;
+package opp.shapes;
 
 public interface FourAngle {
     void printAllSides();

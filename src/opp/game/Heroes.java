@@ -1,4 +1,4 @@
-package game;
+package opp.game;
 
 public class Heroes implements Creature{
     private int basicAttack;

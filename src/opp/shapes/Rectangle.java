@@ -1,4 +1,4 @@
-package geometria.shapes;
+package opp.shapes;
 
 public class Rectangle implements Shape{
     private int a;

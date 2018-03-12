@@ -1,4 +1,4 @@
-package geometria.shapes;
+package opp.shapes;
 
 public class Square implements Shape, FourAngle {
     private int a;
