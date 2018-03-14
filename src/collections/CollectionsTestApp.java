@@ -55,8 +55,7 @@ public class CollectionsTestApp {
         }
     }
 
-    private static void showLongestElement(List<String> lista)
-    {
+    private static void showLongestElement(List<String> lista) {
         List<String> text = new ArrayList<>();
         Random generator = new Random();
 
@@ -115,7 +114,6 @@ public class CollectionsTestApp {
         }
         //names.for //skrót intelliJ
     }
-
 
     private static <T> void showArray(T[] array){
         for (int i = 0; i < array.length; i++) {

@@ -33,6 +33,11 @@ public class Author {
         this.language = language;
     }
 
+    public Author(String firstName, String lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+
     @Override
     public String toString() {
         return "Author{" +
