@@ -1,8 +1,8 @@
 package game.newGame;
 
-public class Soldier  {
+public class Soldier extends Monster {
 
-//    public Soldier(int basicSpeed, int basicDefensce, int basicAttack, int basicHealth) {
-////        super(basicSpeed, basicDefensce, basicAttack, basicHealth);
-//    }
+    public Soldier(int basicSpeed, int basicDefensce, int basicAttack, double basicHealth) {
+        super(basicSpeed, basicDefensce, basicAttack, basicHealth);
+    }
 }
