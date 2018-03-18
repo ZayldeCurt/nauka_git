@@ -5,13 +5,13 @@ public abstract class Monster {
     private int basicSpeed;
     private int basicDefensce;
     private int basicAttack;
-    private int basicHealth;
+    private double Health;
 
-    protected Monster(int basicSpeed, int basicDefensce, int basicAttack, int basicHealth) {
+    protected Monster(int basicSpeed, int basicDefensce, int basicAttack, double Health) {
         this.basicSpeed = basicSpeed;
         this.basicDefensce = basicDefensce;
         this.basicAttack = basicAttack;
-        this.basicHealth = basicHealth;
+        this.Health = Health;
     }
 
 
@@ -25,13 +25,14 @@ public abstract class Monster {
         return basicDefensce;
     }
     protected boolean isAlive() {
-        if(basicHealth>0){
+        if(Health >0){
             return true;
         }
         else{
             return false;
         }
     }
+
 
 
     protected int getBasicSpeed() {
@@ -52,11 +53,11 @@ public abstract class Monster {
     protected void setBasicAttack(int basicAttack) {
         this.basicAttack = basicAttack;
     }
-    protected int getBasicHealth() {
-        return basicHealth;
+    protected double getHealth() {
+        return Health;
     }
-    protected void setBasicHealth(int basicHealth) {
-        this.basicHealth = basicHealth;
+    protected void setHealth(double health) {
+        this.Health = health;
     }
 
 

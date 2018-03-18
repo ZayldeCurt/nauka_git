@@ -2,16 +2,16 @@ package game.newGame;
 
 public class Skeleton extends Monster  {
 
-    private int extraHealth;
+    private double extraHealth;
 
-    public Skeleton(int basicSpeed, int basicDefensce, int basicAttack, int basicHealth, int extraHealth) {
+    public Skeleton(int basicSpeed, int basicDefensce, int basicAttack, double basicHealth, double extraHealth) {
         super(basicSpeed, basicDefensce, basicAttack, basicHealth);
         this.extraHealth = extraHealth;
     }
 
     @Override
     public boolean isAlive() {
-        if(getBasicHealth()>(0-extraHealth)){
+        if(getHealth()>(0-extraHealth)){
             return true;
         }
         else{
@@ -19,11 +19,11 @@ public class Skeleton extends Monster  {
         }
     }
 
-    public int getExtraHealth() {
+    public double getExtraHealth() {
         return extraHealth;
     }
 
-    public void setExtraHealth(int extraHealth) {
+    public void setExtraHealth(double extraHealth) {
         this.extraHealth = extraHealth;
     }
 }
