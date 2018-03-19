@@ -16,14 +16,19 @@ public class Knight extends Monster{
     //    public Knight(int basicSpeed, int basicDefensce, int basicAttack, double basicHealth) {
 //        super(basicSpeed, basicDefensce, basicAttack, basicHealth);
 //    }
-    public int attack(){
-        return getBasicAttack()*extraAtack;
+    public int attack(Monster monster){
+        int demage;
+        int currentAttack;
+
+        currentAttack = this.getBasicAttack()+this.extraAtack;
+        demage = currentAttack-monster.defense();
+        return demage<0 ? 0 : demage;
     }
     public int defense(){
-        return getBasicDefensce()*extraDefensce;
+        return getBasicDefensce()+extraDefensce;
     }
     public int run(){
-        return getBasicSpeed()*extraSpeed;
+        return getBasicSpeed()+extraSpeed;
     }
 
 }

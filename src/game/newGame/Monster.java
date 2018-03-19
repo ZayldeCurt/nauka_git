@@ -15,15 +15,10 @@ public abstract class Monster {
     }
 
 
-    protected int attack(){
-        return basicAttack;
-    }
-    protected int run(){
-        return basicSpeed;
-    }
-    protected int defense() {
-        return basicDefensce;
-    }
+    protected abstract int attack(Monster monster);
+    protected abstract int run();
+    protected abstract int defense();
+
     protected boolean isAlive() {
         if(Health >0){
             return true;

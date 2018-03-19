@@ -10,12 +10,23 @@ public class Zombie extends Monster{
         this.extraSlow = extraSlow;
         this.extraDefense = extraDefense;
     }
-
+    @Override
     public int defense() {
-        return super.defense()*extraDefense;
+        return this.getBasicDefensce()+extraDefense;
     }
+
+    @Override
+    public int attack(Monster monster){
+        int demage;
+        int currentAttack;
+
+        currentAttack = this.getBasicAttack()   ;
+        demage = currentAttack-monster.defense();
+        return demage<0 ? 0 : demage;
+    }
+    @Override
     public int run(){
-        return super.run()*extraSlow;
+        return this.getBasicSpeed()-extraSlow;
     }
 
     public int getExtraSlow() {
