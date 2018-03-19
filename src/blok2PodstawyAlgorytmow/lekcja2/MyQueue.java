@@ -1,6 +1,6 @@
 package blok2PodstawyAlgorytmow.lekcja2;
 
-public class MyQueue {
+public class MyQueue<T> {
     MyQueueElement firstelement;
     MyQueueElement lastelement;
     Integer count;
@@ -13,15 +13,16 @@ public class MyQueue {
     {
         return firstelement ==null;
     }
-    public void add(MyQueueElement element){
+    public void add(T element){
+        MyQueueElement newElement = new MyQueueElement(element);
         if(isEmpty()){
-           firstelement = element;
-           lastelement = element;
+           firstelement = newElement;
+           lastelement = newElement;
         }
         else{
             MyQueueElement currentLast = lastelement;
-            currentLast.setNext(element);
-            lastelement = element;
+            currentLast.setNext(newElement);
+            lastelement = newElement;
         }
         count++;
     }
