@@ -1,10 +1,10 @@
 package blok2PodstawyAlgorytmow.lekcja2;
 
-public class MyQueueElement {
+public class MyQueueElement<T> {
         MyQueueElement next;
-        Integer valude;
+        T valude;
 
-    public MyQueueElement(Integer valude) {
+    public MyQueueElement(T valude) {
         this.valude = valude;
     }
 
