@@ -1,4 +1,4 @@
-package blok2PodstawyAlgorytmow.heap.complete_tree;
+package blok2PodstawyAlgorytmow.complete_tree;
 
 public class CompleteTree {
     private Node[] values;

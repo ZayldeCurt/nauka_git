@@ -1,4 +1,4 @@
-package blok2PodstawyAlgorytmow.heap.complete_tree;
+package blok2PodstawyAlgorytmow.complete_tree;
 
 public class Main {
     public static void main(String[] args) {
@@ -18,7 +18,6 @@ public class Main {
         completeTree.add(new Node("J"));
         completeTree.add(new Node("K"));
         completeTree.add(new Node("L"));
-
         completeTree.printPreOrder(completeTree, root);
 
         System.out.println();
