@@ -4,9 +4,9 @@ public class testApp {
 
 
     public static void main(String[] args) {
-        Monster skeleton = new Skeleton(10,10,10,10,10);
-        Monster zombie = new Zombie(10,10,15,10,10,10);
-        Monster soldier = new Soldier(10,10,10,10);
+        Monster skeleton = new Skeleton(10,10,10,100,10);
+        Monster zombie = new Zombie(10,10,15,100,10,10);
+        Monster soldier = new Soldier(10,10,10,100);
         Monster knight = new Knight(10,10,15,10,10,10,10);
         Monster[] blueTeam = {skeleton,zombie};
         Monster[] redTeam =  {soldier,knight};
@@ -14,15 +14,15 @@ public class testApp {
         boolean[] result2;
 
 
-        result1=BattleAction.fightOneOnOne(zombie,knight);
-        System.out.println(result1[0]+" : "+result1[1]);
+//        result1=BattleAction.singleAttackInFightOneOnOne(zombie,knight);
+//        System.out.println(result1[0]+" : "+result1[1]);
+//        BattleAction.singleAttackInFightOneOnOne(zombie,knight);
+//        System.out.println(result1[0]+" : "+result1[1]);
+//        result1=BattleAction.singleAttackInFightOneOnOne(zombie,knight);
+//        System.out.println(result1[0]+" : "+result1[1]);
+//        BattleAction.singleAttackInFightOneOnOne(zombie,knight);
+//        System.out.println(result1[0]+" : "+result1[1]);
         BattleAction.fightOneOnOne(zombie,knight);
-        System.out.println(result1[0]+" : "+result1[1]);
-        result1=BattleAction.fightOneOnOne(zombie,knight);
-        System.out.println(result1[0]+" : "+result1[1]);
-        BattleAction.fightOneOnOne(zombie,knight);
-        System.out.println(result1[0]+" : "+result1[1]);
-
 
     }
 
