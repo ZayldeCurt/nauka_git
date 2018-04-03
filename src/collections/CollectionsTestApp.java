@@ -1,9 +1,7 @@
 package collections;
 
 import opp.User;
-import opp.bookstore.Book;
 
-import java.lang.reflect.Array;
 import java.util.*;
 
 public class CollectionsTestApp {
@@ -27,7 +25,7 @@ public class CollectionsTestApp {
 
         //Map
         //klucze musza byc unikalne, jelsi zostanie dodany drugi o tym samym kluczu to nadpisze
-        Map<String, User> map = new HashMap<>();
+            Map<String, User> map = new HashMap<>();
         map.put("123456789", new User("szymon","nowak"));
         map.put("123456710", new User("jakub","wolny"));
         map.put("1236",new User("jan","kowalski"));
