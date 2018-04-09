@@ -14,8 +14,10 @@ public class MazeSolver {
                 {1,1,0,1,0,1},
                 {1,1,1,1,0,1}};
 
+
+
 //        solveMaze(maze1);
-        rightHand(maze1);
+        rightHand(maze2);
     }
 
     public static void solveMaze(int[][] maze){
@@ -28,13 +30,17 @@ public class MazeSolver {
     public static void rightHand(int[][] maze){
         Integer x = findStart(maze[0]);
         Integer y = 0;
-        int direction=100;
+        System.out.println(y+" : "+x);
+        int direction=0;
+        int[] tempDate;
+
         while(y!=(maze.length-1)){
+
+            tempDate=checkRightHand(maze,x,y,direction);
+            direction=tempDate[0];
+            x=tempDate[1];
+            y=tempDate[2];
             System.out.println(y+" : "+x);
-
-
-
-
         }
     }
 
@@ -83,36 +89,37 @@ public class MazeSolver {
 
         }
     }
-    public static int checkRightHand(int[][] maze,Integer x, Integer y,int direction){
+
+    public static int[] checkRightHand(int[][] maze,Integer x, Integer y,int direction){
         int temp=0+direction;
-        int actualdirection=0;
-        while(temp<4){  //TODO ciekawe czy to dziala nie testowane
+//        while(temp<4){
+        for (int i = 0; i < 4; i++) {
             switch(temp%4){
                 case 0:
                     if(maze[y][x-1]==0){
                         x--;
-                        actualdirection=0;
+                        int[] actualdirection={3,x,y};
                         return actualdirection;
                     }
                     break;
                 case 1:
                     if(maze[y+1][x]==0){
                         y++;
-                        actualdirection=1;
+                        int[] actualdirection={0,x,y};
                         return actualdirection;
                     }
                     break;
                 case 2:
                     if(maze[y][x+1]==0){
                         x++;
-                        actualdirection=2;
+                        int[] actualdirection={1,x,y};
                         return actualdirection;
                     }
                     break;
                 case 3:
                     if(maze[y-1][x]==0){
                         y--;
-                        actualdirection=3;
+                        int[] actualdirection={2,x,y};
                         return actualdirection;
                     }
                     break;
@@ -122,6 +129,8 @@ public class MazeSolver {
             temp++;
 
         }
+        System.out.println("error out while");
+        int[] actualdirection={0,0,0};
         return actualdirection;
     }
 
