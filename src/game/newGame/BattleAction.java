@@ -1,5 +1,7 @@
 package game.newGame;
 
+import java.util.List;
+
 public class BattleAction {
 
 
@@ -66,13 +68,13 @@ public class BattleAction {
         boolean[] result;
         do{
             result = singleAttackInFightOneOnOne(monster1,monster2);
-//            System.out.println(result[0]+" : "+result[1]);
+            System.out.println(result[0]+" : "+result[1]);
         }while(result[0]&&result[1]);
     }
 
-    public static void fightTeamVsTeam(Monster[] teamOne, Monster[] teamTwo){ //TODO przerobic to na liste, bo jest problem przy usuwaniu potwora gdy zginie
-        int sizeOfTeamOne = teamOne.length;
-        int sizeOfTeamTwo = teamTwo.length;
+    public static void fightTeamVsTeam(List<Monster> teamOne, List<Monster> teamTwo){ //TODO cos nie dziala
+        int sizeOfTeamOne = teamOne.size();
+        int sizeOfTeamTwo = teamTwo.size();
         int numberOfOneOnOne = Math.max(sizeOfTeamOne,sizeOfTeamTwo);
         boolean teamEqual = sizeOfTeamOne == sizeOfTeamTwo ? true : false ;
         boolean whichTeamIsBigger = sizeOfTeamOne>sizeOfTeamTwo ? true : false;
@@ -81,40 +83,40 @@ public class BattleAction {
 
         do {
             for (int i = 0; i < numberOfOneOnOne - 1; i++) {
-                whoDied = singleAttackInFightOneOnOne(teamOne[i], teamTwo[i]);
+                whoDied = singleAttackInFightOneOnOne(teamOne.get(i), teamTwo.get(i));
                 if(!(whoDied[0]&&whoDied[1])){
                     isSomeoneDead=true;
-                    if(whoDied[0]) removeFromTeam(teamOne);
-                    if(whoDied[1]) removeFromTeam(teamTwo);
+                    if(whoDied[0]) removeFromTeam(teamOne,i);
+                    if(whoDied[1]) removeFromTeam(teamTwo,i);
                 }
             }
             if(!teamEqual) {
                 if (whichTeamIsBigger) {
                     for (int i = 0; i < sizeOfTeamOne - numberOfOneOnOne; i++) {
-                        whoDied = singleAttackInTeamOnOne(teamOne[i + numberOfOneOnOne], teamTwo[i], i);
+                        whoDied = singleAttackInTeamOnOne(teamOne.get(i + numberOfOneOnOne), teamTwo.get(i), i);
                         if (!(whoDied[0] && whoDied[1])) {
                             isSomeoneDead = true;
-                            if(whoDied[0]) removeFromTeam(teamOne);
-                            if(whoDied[1]) removeFromTeam(teamTwo);
+                            if(whoDied[0]) removeFromTeam(teamOne,i);
+                            if(whoDied[1]) removeFromTeam(teamTwo,i);
                         }
                     }
                 } else {
                     for (int i = 0; i < sizeOfTeamTwo - numberOfOneOnOne; i++) {
-                        whoDied = singleAttackInTeamOnOne(teamTwo[i + numberOfOneOnOne], teamOne[i], i);
+                        whoDied = singleAttackInTeamOnOne(teamTwo.get(i + numberOfOneOnOne), teamOne.get(i), i);
                         if (!(whoDied[0] && whoDied[1])) {
                             isSomeoneDead = true;
-                            if(whoDied[0]) removeFromTeam(teamOne);
-                            if(whoDied[1]) removeFromTeam(teamTwo);
+                            if(whoDied[0]) removeFromTeam(teamOne,i);
+                            if(whoDied[1]) removeFromTeam(teamTwo,i);
                         }
                     }
                 }
             }
         }while(!isSomeoneDead);
 
-        fightTeamVsTeam(teamOne,teamTwo);//TODO trzeba dodac usuwanie z druzyny
+        fightTeamVsTeam(teamOne,teamTwo);
     }
 
-    private static void removeFromTeam(Monster[] teamOne) {
-
+    private static void removeFromTeam(List<Monster> team, int index) {
+        team.remove(index);
     }
 }
